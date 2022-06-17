@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="posts">
   {% for post in site.posts %}
-    <%if(post.title.equals("About me")){%>
+    {% if post.title == "About me" %}
       <article class="post">
 
         <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
@@ -13,6 +13,6 @@ layout: default
         </div>
         
       </article>
-    <%}%>
+    {% endif %}
   {% endfor %}
 </div>
