@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="posts">
+<!--div class="posts">
   {% for post in site.posts %}
     {% if post.title == "About Me" %}
       <article class="post">
@@ -12,7 +12,26 @@ layout: default
           {{ post.excerpt }}
         </div>
         
+        
       </article>
     {% endif %}
   {% endfor %}
+</div--!>
+
+<div class="posts">
+  {% for post in site.posts %}
+    {% if post.title == "About Me" %}
+      <article class="post">
+        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+        <div class="entry">
+          {{ content }}
+        </div>
+
+        {% include disqus.html %}
+      </article>
+
+    {% endif %}
+  {% endfor %}
 </div>
+
